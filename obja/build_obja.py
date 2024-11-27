@@ -16,11 +16,11 @@ def main():
     
     np.seterr(invalid = 'raise')
     model = Decimater()
-    model.parse_file('example/igea.obj')
+    model.parse_file('example/bunny.obj')
     print(len(model.faces))
 
-    with open('example/igea_compressed.obja', 'w') as output:
-         model.contract(l=11 , output = output)
+    with open('example/bunny_compressed.obja', 'w') as output:
+         model.contract(l=8 , output = output)
     plot_model_with_points_3D(model.mapping , model.faces)
     model.export_to_obj("compressed_model.obj")
     model.uniform_remeshing(m=1)
